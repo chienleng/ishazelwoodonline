@@ -1,0 +1,40 @@
+body {
+  padding: 40px 0;
+}
+h1 {
+  margin: 0 auto 10px;
+  font-size: 6em;
+  padding: 20px;
+  /*border: 2px solid #fff;*/
+  width: 20%;
+}
+.main {
+  text-align: center;
+  margin: 15% auto 15%;
+}
+img {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /*height: 100%;*/
+  opacity: 0.2;
+}
+hr {
+  margin-top: 80px;
+  opacity: 0.1;
+}
+.futureSuper {
+  text-align: center;
+  color: #666;
+}
+.futureSuper a {
+  display: block;
+  border: 2px solid #fff;
+  width: 35%;
+  padding: 10px;
+  margin: 10px auto;
+  color: #fff;
+  text-decoration: none;
+}
