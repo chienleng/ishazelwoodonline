@@ -1,7 +1,7 @@
-var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 Chart.defaults.global.elements.point.radius = 1;
 Chart.defaults.global.elements.line.borderWidth = 1;
 Chart.defaults.global.legend.position = 'bottom';
+
 var config = {
   type: 'line',
   data: {
@@ -61,7 +61,7 @@ var config = {
     responsive: true,
     title: {
       display: false,
-      text: "Mega Boilers."
+      text: 'Mega Boilers.'
     },
     tooltips: {
       mode: 'index',
@@ -97,64 +97,41 @@ var config = {
   }
 };
 
-window.onload = function() {
-  var ctx = document.getElementById("canvas").getContext("2d");
-  window.myLine = new Chart(ctx, config);
-};
+function showNasties() {
+  var nasties = [
+    'emitting 534 kg CO^2 per second',
+    'dumping 83 kg of arsenic & compounds into the air and water',
+    'dumping 450 kg of mercury & compounds into the air and water',
+    'dumping 150 kg of lead & compounds into the air and water',
+    'dumping 4,800 kg of chlorine & compounds into the water'
+  ];
+  var howLong = 10000; //milliseconds
+  var transitionTime = 1000;
+  var showClass = 'show';
+  var nastyText = document.getElementById('nasty');
+  var nastyIndex = 0;
+  var nastyCount = nasties.length;
 
-// document.getElementById('randomizeData').addEventListener('click', function() {
-//   config.data.datasets.forEach(function(dataset) {
-//     dataset.data = dataset.data.map(function() {
-//       return randomScalingFactor();
-//     });
-//   });
-//
-//   window.myLine.update();
-// });
-//
-// var colorNames = Object.keys(window.chartColors);
-// document.getElementById('addDataset').addEventListener('click', function() {
-//   var colorName = colorNames[config.data.datasets.length % colorNames.length];
-//   var newColor = window.chartColors[colorName];
-//   var newDataset = {
-//     label: 'Dataset ' + config.data.datasets.length,
-//     borderColor: newColor,
-//     backgroundColor: newColor,
-//     data: [],
-//   };
-//
-//   for (var index = 0; index < config.data.labels.length; ++index) {
-//     newDataset.data.push(randomScalingFactor());
-//   }
-//
-//   config.data.datasets.push(newDataset);
-//   window.myLine.update();
-// });
-//
-// document.getElementById('addData').addEventListener('click', function() {
-//   if (config.data.datasets.length > 0) {
-// 	  var month = MONTHS[config.data.labels.length % MONTHS.length];
-// 	  config.data.labels.push(month);
-//
-// 	  config.data.datasets.forEach(function(dataset) {
-// 	     dataset.data.push(randomScalingFactor());
-// 	  });
-//
-// 	  window.myLine.update();
-//   }
-// });
-//
-// document.getElementById('removeDataset').addEventListener('click', function() {
-//   config.data.datasets.splice(0, 1);
-//   window.myLine.update();
-// });
-//
-// document.getElementById('removeData').addEventListener('click', function() {
-//   config.data.labels.splice(-1, 1); // remove the label first
-//
-//   config.data.datasets.forEach(function(dataset, datasetIndex) {
-//     dataset.data.pop();
-//   });
-//
-//   window.myLine.update();
-// });
+  nastyText.innerHTML = nasties[nastyIndex];
+  nastyText.className = showClass;
+  nastyIndex++;
+
+  setInterval(function() {
+    nastyText.className = '';
+
+    setTimeout(function() {
+      nastyText.innerHTML = nasties[nastyIndex];
+      nastyText.className = showClass;
+      nastyIndex++;
+      if (nastyIndex === nastyCount) {
+        nastyIndex = 0;
+      }
+    }, transitionTime)
+  }, howLong);
+}
+window.onload = function() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+  window.myLine = new Chart(ctx, config);
+
+  showNasties();
+};
