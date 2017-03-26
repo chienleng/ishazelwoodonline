@@ -105,7 +105,7 @@ function showNasties() {
     'dumping 150 kg of lead & compounds into the air and water',
     'dumping 4,800 kg of chlorine & compounds into the water'
   ];
-  var howLong = 10000; //milliseconds
+  var howLong = 5000; //milliseconds
   var transitionTime = 1000;
   var showClass = 'show';
   var nastyText = document.getElementById('nasty');
