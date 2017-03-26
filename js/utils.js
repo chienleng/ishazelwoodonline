@@ -12,10 +12,38 @@ window.chartColors = {
 	grey: 'rgba(201, 203, 207, 0.2)'
 };
 
+window.greyColors = {
+	grey1: 'rgb(227, 227, 227)',
+	grey2: 'rgb(213, 213, 213)',
+	grey3: 'rgb(198, 198, 198)',
+	grey4: 'rgb(181, 181, 181)',
+	grey5: 'rgb(165, 165, 165)',
+	grey6: 'rgb(143, 143, 143)',
+	grey7: 'rgb(125, 125, 125)',
+	grey8: 'rgb(104, 104, 104)'
+};
+
 window.randomScalingFactor = function() {
 	// return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 1600);
 	return (Math.random() > 0.5 ? 1.0 : 1.0) * Math.round(Math.random() * 1600);
 };
+
+// var csv is the CSV file with headers
+function csvJSON(csv) {
+  var lines = csv.split("\n");
+  var result = [];
+  var headers=lines[0].split(",");
+  for(var i=1;i<lines.length;i++){
+      var obj = {};
+      var currentline=lines[i].split(",");
+      for(var j=0;j<headers.length;j++){
+        obj[j] = currentline[j];
+      }
+      result.push(obj);
+  }
+  return result; //JavaScript object
+  // return JSON.stringify(result); //JSON
+}
 
 (function(global) {
 	var Months = [

@@ -1,19 +1,26 @@
 body {
   padding: 40px 0;
   line-height: 1.75em;
-  letter-spacing: .4px;
 }
 h1 {
-  margin: 0 auto 10px;
-  font-size: 6em;
-  padding: 20px;
-  width: 20%;
-  letter-spacing: 0.0729167em;
+  margin: 0 auto;
+  font-size: 4em;
+  width: 80%;
+  /*height: 200px;*/
+}
+#nasty {
+  -webkit-transition: all 1.5s; /* Safari */
+  transition: all 1.5s;
+  opacity: 0;
+}
+#nasty.show {
+  opacity: 1;
 }
 h5 {color: #555;}
 canvas {-moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
 footer p {text-align: center; font-size: 0.9em;}
 footer small {font-family: 'Abel', sans-serif; color: #666;}
+
 .hero-text {
   color: #777;
   line-height: 2.5em;
@@ -56,7 +63,6 @@ hr {
 .futureSuper a {
   display: block;
   border: 2px solid #fff;
-  /*border-bottom-color: #1EAEDB;*/
   width: 40%;
   padding: 10px;
   margin: 10px auto;
@@ -64,9 +70,6 @@ hr {
   text-decoration: none;
   -webkit-transition: all .5s; /* Safari */
   transition: all .5s;
-  /*font-family: 'Abel', sans-serif;*/
-  /*font-size: 1.2em;*/
-  /*letter-spacing: 0.065em;*/
 }
 .futureSuper a:hover {
   background-color: #fff;

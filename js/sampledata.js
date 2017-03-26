@@ -49,3 +49,57 @@ var sampleData = {
     }
   ]
 }
+
+var sampleChartData = {
+  labels: sampleData.labels,
+  datasets: [
+    {
+      label: sampleData.series[0].name,
+      data: sampleData.series[0].data,
+      borderColor: window.chartColors.grey,
+      backgroundColor: window.chartColors.grey,
+    },
+    {
+      label: sampleData.series[1].name,
+      data: sampleData.series[1].data,
+      borderColor: window.chartColors.grey,
+      backgroundColor: window.chartColors.grey,
+    },
+    {
+      label: sampleData.series[2].name,
+      data: sampleData.series[2].data,
+      borderColor: window.chartColors.grey,
+      backgroundColor: window.chartColors.grey,
+    },
+    {
+      label: sampleData.series[3].name,
+      data: sampleData.series[3].data,
+      borderColor: window.chartColors.grey,
+      backgroundColor: window.chartColors.grey,
+    },
+    {
+      label: sampleData.series[4].name,
+      data: sampleData.series[4].data,
+      borderColor: window.chartColors.grey,
+      backgroundColor: window.chartColors.grey,
+    },
+    {
+      label: sampleData.series[5].name,
+      data: sampleData.series[5].data,
+      borderColor: window.chartColors.grey,
+      backgroundColor: window.chartColors.grey,
+    },
+    {
+      label: sampleData.series[6].name,
+      data: sampleData.series[6].data,
+      borderColor: window.chartColors.grey,
+      backgroundColor: window.chartColors.grey,
+    },
+    {
+      label: sampleData.series[7].name,
+      data: sampleData.series[7].data,
+      borderColor: window.chartColors.grey,
+      backgroundColor: window.chartColors.grey,
+    }
+  ]
+}
