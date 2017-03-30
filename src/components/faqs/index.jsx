@@ -21,7 +21,7 @@ export default class FAQs extends React.Component {
 				</div>
 				<div className="question">
 					<h5>Have any other coal fired power plants closed down recently in Australia?</h5>
-					<p>Certainly. Hazelwood is just the most recent. Since 2012 nine other coal-fired power stations have been retired: Wallerawang (1000&nbspMW), Energy Brix (170 MW), Playford (240&nbspMW), Redbank (151&nbspMW), Anglesea (150&nbspMW), Collinsville (190&nbspMW), Munmorah (1400&nbspMW), Northern (520&nbspMW), Swanbank B (480&nbspMW).</p>
+					<p>Certainly. Hazelwood is just the most recent. Since 2012 nine other coal-fired power stations have been retired: Wallerawang (1000 MW), Energy Brix (170 MW), Playford (240 MW), Redbank (151 MW), Anglesea (150 MW), Collinsville (190 MW), Munmorah (1400 MW), Northern (520 MW), Swanbank B (480 MW).</p>
 				</div>
 				<div className="question">
 					<h5>How do I learn more about clean energy?</h5>
