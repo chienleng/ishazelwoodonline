@@ -1,0 +1,23 @@
+.futureSuper {
+  text-align: center;
+  color: #888;
+  p {
+    font-size: 1em;
+  }
+  a {
+    display: block;
+    border: 2px solid #fff;
+    width: 50%;
+    padding: 10px;
+    margin: 10px auto;
+    color: #fff;
+    text-decoration: none;
+    -webkit-transition: all .5s; /* Safari */
+    transition: all .5s;
+
+    &:hover {
+      background-color: #fff;
+      color: #888;
+    }
+  }
+}

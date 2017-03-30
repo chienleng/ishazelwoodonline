@@ -1,0 +1,48 @@
+body {
+  padding: 40px 0;
+  line-height: 1.75em;
+}
+#loading {
+  position: absolute;
+  top: 180px;
+  width: 100%;
+  text-align: center;
+  opacity: 1;
+  -webkit-transition: all .5s ease-in-out; /* Safari */
+  transition: all .5s ease-in-out;
+}
+#loading.hide {
+  opacity: 0;
+}
+h1 {
+  margin: 0 auto;
+  font-size: 4em;
+}
+
+h5 {color: #888;}
+strong {
+  font-weight: normal;
+  color: #bbb;
+}
+.station2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.2;
+  width: 100%;
+  z-index: 1;
+}
+.content {
+  position: relative;
+  z-index: 2;
+}
+hr {
+  margin-top: 80px;
+  opacity: 0.1;
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  h1 { width: 80%;}
+}

@@ -1,0 +1,22 @@
+.main {
+  text-align: center;
+  margin: 15% auto 15%;
+}
+#hero-text {
+  -webkit-transition: all 1.5s; /* Safari */
+  transition: all 1.5s;
+  // opacity: 0;
+}
+#hero-text.show {
+  opacity: 1;
+}
+
+#nasty {
+  -webkit-transition: all 1.5s; /* Safari */
+  transition: all 1.5s;
+  opacity: 0;
+  height: 100px;
+}
+#nasty.show {
+  opacity: 1;
+}
