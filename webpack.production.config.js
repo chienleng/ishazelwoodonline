@@ -4,17 +4,17 @@ var loaders = require('./webpack.loaders');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 loaders.push({
 	test: /\.scss$/,
-	loader: ExtractTextPlugin.extract({fallback: 'style-loader', use : 'css-loader?sourceMap&localIdentName=[local]___[hash:base64:5]!sass-loader?outputStyle=expanded'}),
+	loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader?sourceMap&localIdentName=[local]___[hash:base64:5]!sass-loader?outputStyle=expanded'}),
 	exclude: ['node_modules']
 });
 
 module.exports = {
 	entry: [
-		'./src/index.jsx',
-		'./styles/index.scss'
+		'./src/index.jsx', './styles/index.scss'
 	],
 	output: {
 		publicPath: './',
@@ -43,16 +43,16 @@ module.exports = {
 			}
 		}),
 		new webpack.optimize.OccurrenceOrderPlugin(),
-		new ExtractTextPlugin({
-				filename: 'style.css',
-				allChunks: true
-		}),
+		new ExtractTextPlugin({filename: 'style.css', allChunks: true}),
 		new HtmlWebpackPlugin({
 			template: './src/template.html',
 			files: {
 				css: ['style.css'],
-				js: ['bundle.js'],
+				js: ['bundle.js']
 			}
-		})
+		}),
+		new CopyWebpackPlugin([
+      { from: './' }
+    ]),
 	]
 };
