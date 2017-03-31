@@ -16,8 +16,8 @@ load
 
 ---
 
-For production:
+For production
 `npm run build`
 
-then grab the files from
-`/public/`
+then serve
+`/public/index.html`
