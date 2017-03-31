@@ -52,7 +52,7 @@ module.exports = {
 			}
 		}),
 		new CopyWebpackPlugin([
-      { from: './' }
+      { from: './static' }
     ]),
 	]
 };
