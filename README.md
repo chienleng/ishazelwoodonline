@@ -15,3 +15,9 @@ load
 `http://localhost:8888`
 
 ---
+
+For production:
+`npm run build`
+
+then grab the files from
+`/public/`
