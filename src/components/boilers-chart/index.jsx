@@ -1,14 +1,14 @@
 import React from 'react';
-import Chart from 'chart.js';
 import moment from 'moment';
-import BoilersData from './hazelwood-boilers.json';
+import Chart from 'chart.js';
 import ChartOptions from './chart-options.js';
 import ChartData from './chart-data.js';
 import './boilers-chart.scss';
 
 export default class BoilersChart extends React.Component {
-	componentDidMount() {
-		let width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+	constructor(props) {
+	  super(props);
+		const width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
 		Chart.defaults.global.defaultFontFamily = 'Source Code Pro';
 		Chart.defaults.global.defaultFontSize = (width <= 414 ? 8 : 12);
@@ -19,7 +19,8 @@ export default class BoilersChart extends React.Component {
 		Chart.defaults.global.animation.duration = 500;
 		Chart.defaults.global.hover.mode = 'point';
 		Chart.defaults.global.hover.intersect = false;
-
+	}
+	componentDidMount() {
 		let ctx = document.getElementById("boiler-chart");
 		let boilerChart = new Chart(ctx, {
 			type: 'line',
@@ -27,15 +28,14 @@ export default class BoilersChart extends React.Component {
 			options: ChartOptions()
 		});
 
-		// just read from json
-		BoilersData.data.forEach(function(row) {
-			var findIndex = boilerChart.config.data.labels.indexOf(moment(row[0]).valueOf());
-			for (var i = 0; i<8; i++) {
-				boilerChart.config.data.datasets[i].data[findIndex] = row[i+1];
-			}
-		});
+		this.props.data.forEach((row) => {
+      var findIndex = boilerChart.config.data.labels.indexOf(moment(row[0]).valueOf());
+      for (var i = 0; i<8; i++) {
+        boilerChart.config.data.datasets[i].data[findIndex] = row[i+1];
+      }
+    });
 
-		boilerChart.update();
+    boilerChart.update();
 	}
 	render() {
 		return (
