@@ -5,8 +5,10 @@ To visualise the closure of the Hazelwood Power Station in Victoria and the impa
 For more information, see http://is.hazelwood.online
 
 ---
+
 after clone, run
 `npm install`
+
 ---
 
 For development, run
